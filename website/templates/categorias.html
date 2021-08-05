@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+<h1 align="center">Categorias</h1>
+<ul class="list-group list-group-flush" id="cat">
+  {% for categoria in cat %}
+  <li class="list-group-item">
+    {{ categoria.data }}
+    <button type="button" class="btn-close" aria-label="Close" onClick="deleteCat({{ cat.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+<form method="POST">
+  <textarea name="cat" id="cat" class="form-control"></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Adicionar Categoria</button>
+  </div>
+</form>
+
+{% endblock %}
