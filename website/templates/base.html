@@ -27,11 +27,8 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <div class="navbar-nav">
                     {% if user.is_authenticated %}
-                    <a class="nav-item nav-link" id="fornec" href="/fornec">Fornecedores</a>
-                    <a class="nav-item nav-link" id="cliente" href="/">Clientes</a>
-                    <a class="nav-item nav-link" id="categorias" href="/cat">Categorias</a>
-                    <a class="nav-item nav-link" id="lista_user" href="/lista_user">Usuários</a>
                     <a class="nav-item nav-link" id="home" href="/">Home</a>
+                    <a class="nav-item nav-link" id="cliente" href="/cadcliente">Cadastro de clientes</a>
                     <a class="nav-item nav-link" id="logout" href="/logout">Sair</a>
                     {% else %}
                     <a class="nav-item nav-link" id="login" href="/login">Entrar</a>

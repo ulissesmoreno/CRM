@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
-from .models import Categoria, User
+from .models import Clientes, User
 from . import db
 import json
 import pandas as pd
@@ -14,9 +14,9 @@ def lista_user():
     cat = User.query.all()
     return render_template("lista_user.html", user=current_user, cat=cat)
 
-@views.route('/fornec', methods=['GET','POST'])
+@views.route('/cadcliente', methods=['GET','POST'])
 @login_required
-def fornec():
+def cliente():
     if request.method == 'POST1': #mudar
         razaoSocial = request.form.get('cat')
         nomeFantasia = request.form.get('cat')
@@ -30,8 +30,8 @@ def fornec():
             db.session.commit()
             flash('Categoria Cadastrada', category='success')
 
-    cat = Categoria.query.all()
-    return render_template("fornec.html", user=current_user, cat=cat)
+    #cat = Clientes.query.all()
+    return render_template("cadcliente.html", user=current_user)#, cat=cat)
 
 @views.route('/cat', methods=['GET','POST'])
 @login_required
